@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculate(a,b) {
+            const add = a + b;
+            const substract = a - b;
+            const multiply = a * b;
+            const divide = a / b;
+
+            return [add, substract, multiply, divide];
+        }
+
+        const [add, substract, multiply, divide] = calculate(8,4);
+
+        document.write("<p> Addition = " + add + "</p>");
+        document.write("<p> Sub = " + substract + "</p>");
+        document.write("<p> Mul = " + multiply + "</p>");
+        document.write("<p> Div = " + divide + "</p>");
+
+    </script>
+</body>
+</html>
