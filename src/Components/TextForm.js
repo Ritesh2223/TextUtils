@@ -12,9 +12,7 @@ export default function TextForm(props) {
         props.showAlert("Converted to Lowercase", "success");
     }
     const handlecopy = () => {
-        var Text = document.getElementById("myBox");
-        Text.select();
-        navigator.clipboard.writeText(Text.value);
+        navigator.clipboard.writeText(Text);
         props.showAlert("Copied to Clipboard", "success");
     }
     const handlespace = () => {
@@ -90,10 +88,10 @@ export default function TextForm(props) {
             </div>
             <div className="container my-2 " style={ {color: props.mode==='dark'?'white':'black'}}>
                 <h5>Your Text Summary</h5>
-                <p>{Text.split(" ").filter((element)=>{return element.length!==0}).length} Wrods and {Text.length} Characters</p>
-                <p>{ 0.008 * Text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes to read</p>
+                <p>{Text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Wrods and {Text.length} Characters</p>
+                <p>{ 0.008 * Text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Minutes to read</p>
                 <h2>Preview</h2>
-                <p>{Text.length>0?Text:"Enter something in the textbox above to preview is here "}</p>
+                <p>{Text.length>0?Text:"Nothin To Preview"}</p>
             </div>
         </>
     );
